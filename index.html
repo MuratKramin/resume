@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="ru" data-lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title data-i18n="title">Крамин Мурат — Резюме</title>
+  <meta name="description" content="Резюме: Крамин Мурат — ML‑инженер (LLM‑агенты, тесты, метрики качества)" />
+  <meta name="theme-color" content="#0f172a" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{ --bg:#0b1020; --panel:#0f172a; --text:#e5e7eb; --muted:#9aa4b2; --accent:#60a5fa; --ring:#1f2a44; --card:#111827; --code:#0b1220; }
+    @media (prefers-color-scheme: light){ :root{--bg:#f8fafc;--panel:#ffffff;--text:#0b1220;--muted:#475569;--accent:#2563eb;--ring:#e2e8f0;--card:#ffffff;--code:#0f172a;} }
+    *{box-sizing:border-box}
+    html,body{margin:0;height:100%}
+    body{font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,"Helvetica Neue",Arial,"Apple Color Emoji","Segoe UI Emoji";line-height:1.6;background:linear-gradient(180deg,var(--bg),#060912);color:var(--text)}
+    .wrap{max-width:900px;margin:0 auto;padding:32px 20px 80px}
+    .card{background:linear-gradient(180deg,var(--panel),#0a1020);border:1px solid var(--ring);border-radius:16px;box-shadow:0 10px 30px rgba(0,0,0,.25)}
+    header{display:flex;gap:24px;align-items:center;padding:28px}
+    .avatar{width:80px;height:80px;border-radius:16px;background:radial-gradient(60% 60% at 40% 30%,#1f3a8a,transparent 60%),radial-gradient(70% 70% at 70% 60%,#0891b2,transparent 60%),var(--card);border:1px solid var(--ring)}
+    h1{font-size:28px;margin:0 0 6px}
+    .meta{color:var(--muted);font-size:14px}
+    .pillbar{display:flex;flex-wrap:wrap;gap:10px;margin-top:12px}
+    .pill{display:inline-flex;align-items:center;gap:8px;padding:8px 12px;border-radius:999px;border:1px solid var(--ring);background:rgba(255,255,255,.02);font-size:14px}
+    .pill a{color:inherit;text-decoration:none}
+    .lang{margin-left:auto;display:flex;gap:8px}
+    .lang button{border:1px solid var(--ring);background:rgba(255,255,255,.03);color:var(--text);padding:6px 10px;border-radius:10px;cursor:pointer}
+    .lang button.active{outline:2px solid var(--accent)}
+    main{padding:0 28px 28px}
+    section{margin-top:28px}
+    .section-title{font-weight:700;font-size:16px;letter-spacing:.02em;color:var(--text);margin-bottom:12px}
+    .block{background:linear-gradient(180deg,var(--card),#0a0f1c);border:1px solid var(--ring);border-radius:14px;padding:18px 18px;margin-bottom:12px}
+    .block h3{margin:0 0 6px;font-size:16px}
+    .block .sub{color:var(--muted);font-size:13px;margin-bottom:6px}
+    ul{margin:8px 0 0 18px}
+    li{margin:6px 0}
+    .skills{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}
+    code{background:var(--code);padding:2px 6px;border-radius:6px;border:1px solid var(--ring)}
+    .footer{color:var(--muted);font-size:13px;padding:18px 28px;border-top:1px solid var(--ring)}
+    @media print{ body{background:#fff;color:#111} .card{box-shadow:none;border:0} .avatar{display:none} .pillbar{display:none} a{text-decoration:none;color:#000} .footer{display:none} }
+  </style>
+  <script type="application/ld+json" id="schemaPerson"></script>
+</head>
+<body>
+  <div class="wrap">
+    <div class="card">
+      <header>
+        <div class="avatar" aria-hidden="true"></div>
+        <div style="flex:1 1 auto;min-width:0">
+          <h1 data-i18n="name">Крамин Мурат</h1>
+          <div class="meta" data-i18n="location">Москва • Дата рождения: 02.11.2001</div>
+          <div class="pillbar">
+            <div class="pill">📞 <a href="tel:+79872322002">+7 987 232‑20‑02</a></div>
+            <div class="pill">✈️ <a href="https://t.me/mtkramin" target="_blank" rel="noopener">@mtkramin</a></div>
+            <div class="pill">💻 <a href="https://github.com/MuratKramin" target="_blank" rel="noopener">github.com/MuratKramin</a></div>
+          </div>
+        </div>
+        <div class="lang" aria-label="Language">
+          <button id="btn-ru" data-setlang="ru" class="active">RU</button>
+          <button id="btn-en" data-setlang="en">EN</button>
+        </div>
+      </header>
+      <main>
+        <section>
+          <div class="section-title" data-i18n="summaryTitle">Краткое резюме</div>
+          <div class="block" data-i18n="summaryText"></div>
+        </section>
+
+        <section>
+          <div class="section-title" data-i18n="expTitle">Опыт работы</div>
+          <div class="block">
+            <h3 data-i18n="expRole">ML‑инженер (ИИ‑агенты), R&D‑отдел банка</h3>
+            <div class="sub" data-i18n="expDates">2025 – наст. время</div>
+            <ul id="expList"></ul>
+          </div>
+        </section>
+
+        <section>
+          <div class="section-title" data-i18n="projTitle">Проекты</div>
+          <div id="projects"></div>
+        </section>
+
+        <section>
+          <div class="section-title" data-i18n="skillsTitle">Навыки</div>
+          <div class="skills" id="skills"></div>
+        </section>
+
+        <section>
+          <div class="section-title" data-i18n="eduTitle">Образование</div>
+          <div id="education"></div>
+        </section>
+
+        <section>
+          <div class="section-title" data-i18n="engTitle">Английский язык</div>
+          <div class="block" data-i18n="engText">Upper‑Intermediate — свободно читаю/пишу технические статьи, документацию, веду переписку.</div>
+        </section>
+      </main>
+      <div class="footer">© <span id="year"></span> <span data-i18n="footerName">Крамин Мурат</span> • <span data-i18n="footerNote">Обновлено вручную — GitHub Pages</span></div>
+    </div>
+  </div>
+  <script>
+    const RU = {
+      title: 'Крамин Мурат — Резюме',
+      name: 'Крамин Мурат',
+      location: 'Москва • Дата рождения: 02.11.2001',
+      summaryTitle: 'Краткое резюме',
+      summaryText: 'ML‑инженер с фокусом на LLM‑агентах для генерации кода и юнит‑тестов, построении метрик качества и надёжности моделей. Опыт в классическом ML и DL (PyTorch/Transformers), автоматизации пайплайнов и экспериментальном бенчмаркинге. Интересы: качество и интерпретируемость промптов, self‑verification, time‑series.',
+      expTitle: 'Опыт работы',
+      expRole: 'ML‑инженер (ИИ‑агенты), R&D‑отдел банка',
+      expDates: '2025 – наст. время',
+      expList: [
+        'Разработка <strong>LLM‑агента для генерации юнит‑тестов (T-cover-agent)</strong> с ориентацией на line/branch coverage и mutation score.',
+        'Построение пайплайна: генерация → прогон тестов (pytest/coverage.py/mutmut) → анализ результатов → перегенерация по правилам.',
+        'Проектирование метрик и экспериментов для оценки качества моделей на корпоративных кодовых базах.',
+        'Технологии: <strong>Python, PyTorch, Transformers, pandas, pytest, coverage.py, mutmut, Optuna, Docker, Git</strong>.'
+      ],
+      projTitle: 'Проекты',
+      projects: [
+        {
+          title: '1) Автоматизированный пайплайн прогнозирования банковского сальдо <span class="sub">(time‑series, продакшен‑скрипты)</span>',
+          bullets: [
+            'Сбор и объединение источников (макрофакторы, валюты, нефть/золото, календарные признаки).',
+            'Модели: <strong>SARIMA/SARIMAX, LightGBM, CatBoost</strong>, гипертюнинг (Optuna).',
+            'Кастомные бизнес‑метрики (например, <code>add_margin</code>, <code>delta_pnl</code>) и механизм автообучения при дрейфе.',
+            'Результат: стабильные прогнозы в онлайне и положительный вклад в маржу.'
+          ]
+        },
+        {
+          title: '2) Генерация уличных панорам по спутниковым снимкам <span class="sub">(CV + генеративные модели)</span>',
+          bullets: [
+            'Условная генерация на основе <strong>GAN (Pix2Pix)</strong> с использованием сегментационных карт (DeepLabV3) как структурных подсказок.',
+            'Балансировка per‑pixel и перцептуальных лоссов для улучшения геометрии и цвета.',
+            'Итог: реалистичные панорамы для задач урбанистики и дополнения датасетов.'
+          ]
+        },
+        {
+          title: '3) Предсказание заболеваний по симптомам: BERT + Reddit + Telegram‑бот <span class="sub">(NLP)</span>',
+          bullets: [
+            'Парсинг Reddit API, полуавтоматическое извлечение симптомов через GPT API, объединение с классическим датасетом.',
+            'Тонкая настройка <strong>BERT‑base</strong> для многоклассовой классификации; сравнение на формальных и «живых» данных.',
+            'Итог: повышение устойчивости к неформальным описаниям; реализован <strong>Telegram‑бот</strong> для демонстрации.'
+          ]
+        }
+      ],
+      skillsTitle: 'Навыки',
+      skills: [
+        {h:'Языки и инструменты', t:'Python, SQL, Linux, Git, Docker'},
+        {h:'ML/DL', t:'PyTorch, scikit‑learn, <strong>Transformers (HF)</strong>, LightGBM, CatBoost'},
+        {h:'Data & Pipelines', t:'pandas, NumPy, Optuna, FastAPI, PostgreSQL'},
+        {h:'Тестирование и надёжность', t:'pytest, <strong>coverage.py</strong>, <strong>mutmut</strong>, принципы CI/CD'},
+        {h:'Области', t:'LLM‑агенты (код/тесты), NLP, компьютерное зрение, временные ряды, интерпретируемость промптов, uncertainty'}
+      ],
+      eduTitle: 'Образование',
+      education: [
+        {h:'НИУ ВШЭ', t:'магистратура, 2 курс — <em>Финансовые технологии и анализ данных (ФКН)</em>, 2024–2026', sub:'Курсы: Машинное обучение, Глубинное обучение, Анализ текстов и генеративные модели, Временные ряды, Компьютерное зрение, Алгоритмы больших данных, Эконометрика.'},
+        {h:'Казанский федеральный университет', t:'бакалавриат — <em>Прикладная математика и информатика</em>, 2019–2024'}
+      ],
+      engTitle: 'Английский язык',
+      engText: 'Upper‑Intermediate — свободно читаю/пишу технические статьи, документацию, веду переписку.',
+      footerName: 'Крамин Мурат',
+      footerNote: 'Обновлено вручную — GitHub Pages'
+    };
+
+    const EN = {
+      title: 'Murat Kramin — Resume',
+      name: 'Murat Kramin',
+      location: 'Moscow • Date of birth: 02 Nov 2001',
+      summaryTitle: 'Summary',
+      summaryText: 'ML Engineer focusing on LLM agents for code & unit‑test generation, quality metrics and model reliability. Experience in classic ML and DL (PyTorch/Transformers), pipeline automation, and experimental benchmarking. Interests: prompt quality & interpretability, self‑verification, time‑series.',
+      expTitle: 'Experience',
+      expRole: 'ML Engineer (AI Agents), Bank R&D Department',
+      expDates: '2025 – present',
+      expList: [
+        'Developed an <strong>LLM agent for unit‑test generation (T‑cover‑agent)</strong> targeting line/branch coverage and mutation score.',
+        'Built a pipeline: generation → test run (pytest/coverage.py/mutmut) → result analysis → rule‑based regeneration.',
+        'Designed metrics and experiments to evaluate model quality on internal codebases.',
+        'Tech: <strong>Python, PyTorch, Transformers, pandas, pytest, coverage.py, mutmut, Optuna, Docker, Git</strong>.'
+      ],
+      projTitle: 'Projects',
+      projects: [
+        {
+          title: '1) Automated Bank Balance Forecasting Pipeline <span class="sub">(time‑series, production scripts)</span>',
+          bullets: [
+            'Data aggregation from macros, FX, oil/gold, calendar features.',
+            'Models: <strong>SARIMA/SARIMAX, LightGBM, CatBoost</strong>, hyperparameter tuning (Optuna).',
+            'Custom business metrics (e.g., <code>add_margin</code>, <code>delta_pnl</code>) and auto‑retraining on drift.',
+            'Result: stable online forecasts and positive margin impact.'
+          ]
+        },
+        {
+          title: '2) Street‑View Generation from Satellite Imagery <span class="sub">(CV + generative models)</span>',
+          bullets: [
+            'Conditional generation with <strong>GAN (Pix2Pix)</strong> using segmentation maps (DeepLabV3) as structural hints.',
+            'Balanced per‑pixel and perceptual losses to improve geometry and color.',
+            'Outcome: realistic panoramas for urban studies and dataset augmentation.'
+          ]
+        },
+        {
+          title: '3) Disease Prediction from Symptoms: BERT + Reddit + Telegram Bot <span class="sub">(NLP)</span>',
+          bullets: [
+            'Parsed Reddit API, semi‑automated symptom extraction with GPT API, merged with a classic dataset.',
+            'Fine‑tuned <strong>BERT‑base</strong> for multi‑class classification; compared on formal and "in‑the‑wild" data.',
+            'Outcome: better robustness to informal descriptions; shipped a demo <strong>Telegram bot</strong>.'
+          ]
+        }
+      ],
+      skillsTitle: 'Skills',
+      skills: [
+        {h:'Languages & Tools', t:'Python, SQL, Linux, Git, Docker'},
+        {h:'ML/DL', t:'PyTorch, scikit‑learn, <strong>Transformers (HF)</strong>, LightGBM, CatBoost'},
+        {h:'Data & Pipelines', t:'pandas, NumPy, Optuna, FastAPI, PostgreSQL'},
+        {h:'Testing & Reliability', t:'pytest, <strong>coverage.py</strong>, <strong>mutmut</strong>, CI/CD principles'},
+        {h:'Domains', t:'LLM agents (code/tests), NLP, computer vision, time series, prompt interpretability, uncertainty'}
+      ],
+      eduTitle: 'Education',
+      education: [
+        {h:'HSE University (NRU HSE)', t:'Master’s, Year 2 — <em>Financial Technologies & Data Analysis (FCS)</em>, 2024–2026', sub:'Courses: Machine Learning, Deep Learning, Text Analytics & Generative Models, Time‑Series, Computer Vision, Big‑Data Algorithms, Econometrics.'},
+        {h:'Kazan Federal University', t:'B.Sc. — <em>Applied Mathematics & Informatics</em>, 2019–2024'}
+      ],
+      engTitle: 'English',
+      engText: 'Upper‑Intermediate — fluent with technical papers & documentation; comfortable in written communication.',
+      footerName: 'Murat Kramin',
+      footerNote: 'Manually updated — GitHub Pages'
+    };
+
+    function renderLang(dict){
+      document.documentElement.lang = dict===EN ? 'en' : 'ru';
+      document.documentElement.setAttribute('data-lang', document.documentElement.lang);
+      for (const [k,v] of Object.entries(dict)){
+        if (['projects','skills','education','expList'].includes(k)) continue;
+        const el = document.querySelector(`[data-i18n="${k}"]`);
+        if (el) el.innerHTML = v;
+      }
+      // Experience bullets
+      const expUl = document.getElementById('expList');
+      expUl.innerHTML = dict.expList.map(li=>`<li>${li}</li>`).join('');
+      // Projects
+      const projRoot = document.getElementById('projects');
+      projRoot.innerHTML = dict.projects.map(p=>`<div class="block"><h3>${p.title}</h3><ul>${p.bullets.map(b=>`<li>${b}</li>`).join('')}</ul></div>`).join('');
+      // Skills
+      const skillsRoot = document.getElementById('skills');
+      skillsRoot.innerHTML = dict.skills.map(s=>`<div class="block"><strong>${s.h}</strong><br/>${s.t}</div>`).join('');
+      // Education
+      const eduRoot = document.getElementById('education');
+      eduRoot.innerHTML = dict.education.map(e=>`<div class="block"><strong>${e.h}</strong>, ${e.t}${e.sub?`<div class="sub">${e.sub}</div>`:''}</div>`).join('');
+      // Buttons state
+      document.getElementById('btn-ru').classList.toggle('active', dict===RU);
+      document.getElementById('btn-en').classList.toggle('active', dict===EN);
+      // Title
+      document.title = dict.title;
+      // JSON-LD
+      const schema = {
+        "@context":"https://schema.org",
+        "@type":"Person",
+        "name": dict.name,
+        "jobTitle": dict===EN ? 'ML Engineer' : 'ML‑инженер',
+        "address": {"@type":"PostalAddress","addressLocality": dict===EN ? 'Moscow' : 'Москва', "addressCountry":"RU"},
+        "url":"https://github.com/MuratKramin",
+        "sameAs":["https://t.me/mtkramin","https://github.com/MuratKramin"],
+        "knowsAbout":["LLM agents","NLP","Computer Vision","Time Series","Testing","PyTorch","Transformers"]
+      };
+      document.getElementById('schemaPerson').textContent = JSON.stringify(schema);
+    }
+
+    function pickInitialLang(){
+      const urlLang = new URLSearchParams(location.search).get('lang');
+      const saved = localStorage.getItem('lang');
+      if (urlLang) return urlLang;
+      if (saved) return saved;
+      const nav = navigator.language || 'ru';
+      return /^en/i.test(nav) ? 'en' : 'ru';
+    }
+
+    function setLang(lang){
+      const dict = lang==='en' ? EN : RU;
+      renderLang(dict);
+      localStorage.setItem('lang', lang);
+      const url = new URL(location.href);
+      url.searchParams.set('lang', lang); // same URL path, uses ?lang=
+      history.replaceState({}, '', url);
+    }
+
+    document.getElementById('btn-ru').addEventListener('click', ()=>setLang('ru'));
+    document.getElementById('btn-en').addEventListener('click', ()=>setLang('en'));
+
+    document.getElementById('year').textContent = new Date().getFullYear();
+    setLang(pickInitialLang());
+  </script>
+</body>
+</html>
